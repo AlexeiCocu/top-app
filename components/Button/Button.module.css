@@ -23,15 +23,21 @@
     background-color: var(--primary-hover);
 }
 
+
+
 .ghost{
     color: var(--black);
     background: none;
     border: 1px solid var(--gray-light);
+
+
 }
 
 .ghost:hover{
     color: var(--white);
     background-color: var(--primary);
+
+
 }
 
 .arrow{
@@ -42,5 +48,11 @@
 
 .down{
     transform: rotate(90deg);
+    transition: all 0.3s;
+}
+
+.primary svg,
+.ghost:hover svg {
+    fill: var(--white);
     transition: all 0.3s;
 }
