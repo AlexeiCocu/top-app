@@ -1,16 +1,11 @@
 import {Button, Htag, P, Rating, Tag} from "../components";
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState} from "react";
+import {Layout, withLayout} from "../layout/Layout";
 
 
-export default function Home():JSX.Element {
+ function Home():JSX.Element {
     const [counter, setCounter] = useState<number>(0);
-
-    useEffect(() => {
-        console.log('Counter ', counter);
-        return function cleanup(){
-            console.log('Unmount')
-        }
-    });
+    const [rating, setRating] = useState<number>(4);
 
   return (
     <>
@@ -24,7 +19,9 @@ export default function Home():JSX.Element {
         <Tag color={"primary"} size={'s'}>Size Small</Tag>
         <Tag color={"ghost"} size={'s'}>Size Small</Tag>
         <Tag color={"green"} size={'m'} href={'#'}>Size Medium</Tag>
-        <Rating rating={4} />
+        <Rating rating={rating} isEditable={true} setRating={setRating} />
     </>
   )
 }
+
+export default withLayout(Home);
